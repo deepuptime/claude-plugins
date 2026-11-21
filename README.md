@@ -18,7 +18,7 @@ Installing the plugin also adds the DeepUptime MCP server (`https://api.deepupti
 Prefer an API token? Create one under **Organization → API tokens** in the dashboard and add the server yourself:
 
 ```
-claude mcp add --transport http DeepUptime https://api.deepuptime.com/public/mcp --header "Authorization: Bearer YOUR_API_TOKEN"
+claude mcp add --transport http --scope user DeepUptime https://api.deepuptime.com/public/mcp --header "Authorization: Bearer YOUR_API_TOKEN"
 ```
 
 With a read-only token the server lists only the read tools.
@@ -30,4 +30,4 @@ With a read-only token the server lists only the read tools.
 | `deepuptime-monitoring` | Create monitors, suggest what to watch after a deploy, pause or resume checks, schedule maintenance windows, model monitor dependencies, and take incidents through to the postmortem. |
 | `deepuptime-on-call` | Find who is on call; acknowledge, snooze, resolve or escalate active pages; cover or swap a shift; and look into escalation runs and policies. |
 
-The skills ask before anything that changes who gets paged or what is monitored. Read tools work on every plan, including Free; write tools require Pro or higher.
+The skills ask before anything that changes who gets paged or what is monitored. Read tools work on every plan, including Free, except per-probe network diagnostics and incident analytics; those and the write tools require Pro or higher.

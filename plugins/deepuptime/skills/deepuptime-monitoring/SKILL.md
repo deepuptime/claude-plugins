@@ -21,8 +21,8 @@ Hand off when the request is about responding to a page rather than monitoring: 
 
 ## Prerequisites
 
-1. The DeepUptime MCP server is connected to this client. Read tools work on every plan.
-2. **Write actions** (`create_monitor`, `update_monitor`, `pause_monitor`, `resume_monitor`, `register_monitor_dependency`, `delete_monitor_dependency`, `create_incident`, `post_incident_update`, `resolve_incident`, `cancel_incident`, `reopen_incident`, `save_postmortem`, `add_incident_action_item`, `create_maintenance`, `delete_maintenance`) require a **read-write** API token and a **Pro plan or higher**. With a read-only token the write tools are not even listed; on the Free plan they return `FeatureNotAvailable`.
+1. The DeepUptime MCP server is connected to this client. Read tools work on every plan, except the two in item 3.
+2. **Write actions** (`create_monitor`, `update_monitor`, `pause_monitor`, `resume_monitor`, `register_monitor_dependency`, `delete_monitor_dependency`, `create_incident`, `post_incident_update`, `resolve_incident`, `cancel_incident`, `reopen_incident`, `save_postmortem`, `add_incident_action_item`, `create_maintenance`, `delete_maintenance`, `start_maintenance_now`, `end_maintenance`, `extend_maintenance`, `skip_maintenance_occurrence`, `unskip_maintenance_occurrence`) require a **read-write** API token and a **Pro plan or higher**. With a read-only token the write tools are not even listed; on the Free plan they return `FeatureNotAvailable`.
 3. Some read tools are gated by plan. `get_root_cause` (paid) and `get_incident_analytics` (Pro+) are **hard-gated** — below the plan they return a `FeatureNotAvailable` error; handle it like the write-tool prerequisites below (tell the user the plan is unmet, do not retry). `query_metrics` percentiles are **soft-gated** — the percentile fields come back null below Team, not an error.
 
 If a write tool is missing or returns `FeatureNotAvailable`, tell the user which prerequisite is unmet instead of retrying.

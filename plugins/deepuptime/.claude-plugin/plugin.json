@@ -1,7 +1,7 @@
 {
   "name": "deepuptime",
-  "description": "DeepUptime uptime monitoring and on-call operations through the DeepUptime MCP server — create and manage monitors, find who is on call, acknowledge or snooze escalation pages, and cover shifts. Read tools work on all plans; write tools require Pro or higher.",
-  "version": "0.3.0",
+  "description": "DeepUptime uptime monitoring and on-call operations through the DeepUptime MCP server — create and manage monitors, find who is on call, acknowledge or snooze escalation pages, and cover shifts. Read tools work on all plans except per-probe network diagnostics and incident analytics; those and the write tools require Pro or higher.",
+  "version": "0.3.1",
   "author": {
     "name": "IrmakTech",
     "url": "https://deepuptime.com"
