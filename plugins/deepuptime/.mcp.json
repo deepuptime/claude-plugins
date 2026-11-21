@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "DeepUptime": {
+      "type": "http",
+      "url": "https://api.deepuptime.com/public/mcp"
+    }
+  }
+}
